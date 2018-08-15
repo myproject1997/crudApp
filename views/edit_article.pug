@@ -1,0 +1,14 @@
+extends layout
+block content
+    form(method="POST" action="/articles/update/" + article.id)
+        label Title
+        input.form-control(type="text", name="title", value=article.title)
+
+        label Author
+        input.form-control(type="text",name="author", value=article.author)
+
+        label Body
+        textarea.form-control(name="body")=article.body
+
+        br
+        input.btn.btn-primary(type="submit", value="Submit") 

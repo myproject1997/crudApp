@@ -1,0 +1,14 @@
+extends layout
+block content
+    h1 #{article.title}
+    h2 Written By #{article.author}
+    h5 Created by user #{author} (#{article.created_by})
+    p #{article.body}
+
+    br
+    if user
+        if user.id == article.created_by
+            a.btn.btn-default(href="/articles/edit/" + article.id) Edit
+            br
+            a.btn.btn-danger.delete-article(href="#" data-id=article.id) Delete
+    
